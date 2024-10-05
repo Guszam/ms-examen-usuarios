@@ -9,4 +9,5 @@ public interface UsuariosService {
     ResponseEntity<?> buscarUsuarioById(Long idUsuario);
     ResponseEntity<?> guardarUsuario(Usuarios usuarios);
     ResponseEntity<?> actualizarDatosUsuario(Usuarios usuarios);
+    ResponseEntity<?> eliminarusuario(Long idUsuario);
 }

@@ -1,5 +1,6 @@
 package ms_examen_usuarios.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -14,12 +15,13 @@ public class Usuarios {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    @JsonFormat(pattern = "dd/mm/yyyy")
     private Date fechaNacimiento;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Cuentas cuentas;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Direccion direccion;
 
